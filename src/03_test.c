@@ -25,7 +25,10 @@ void quick_sort(int num[total_num], int left, int right){
 
   while(1){ 
     // pivotより大きい値が出るまでlを増加させる．
-    // pivotより小さい値が出るまでrを減少させる．                                 
+      while(num[l] < pivot) l++;
+    // pivotより小さい値が出るまでrを減少させる．     
+      while(pivot < num[r]) r--;
+
       if (l >= r)               // i>=jなら無限ループから抜ける．
         break;                 
       tmp = num[l];             // num[i]とnum[j]を交換する．
