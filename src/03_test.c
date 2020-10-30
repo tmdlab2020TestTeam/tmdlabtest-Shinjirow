@@ -47,6 +47,12 @@ void remainder_number(int num[total_num]){
   int count=0;
   int remainder_num[total_num];
   // for文で回して，条件を満たした場合remainder_numに格納してcountを増やす．
+  for(int i=0;i<total_num;i++){
+    if(i%5){
+      remainder_num[count]=i;
+      count++;
+    }
+  }
   total_num = count;
   show_data(remainder_num);
   quick_sort(remainder_num, 0, total_num-1); // 配列，一番頭の配列番号，一番最後の配列番号
