@@ -1,0 +1,70 @@
+11:16:25 
+11:17:59 l
+11:18:20 less .kani/test.log
+11:18:25 cd .kani
+11:18:30 cat test.log
+11:18:38 cd ../
+11:22:04 git kani disable
+11:27:15 vim src/01_test.c
+11:27:18 gs
+11:27:53 git add src/01_test.c
+11:28:04 git commit -m "バブルソート部分の実装"
+11:28:41 git kani enable
+11:29:15 vim src/02_test.c
+11:29:19 git kani disable
+11:29:24 l
+11:29:32 cd src
+11:29:37 gcc 01_test.c
+error : status 0
+11:29:40 ./a.out
+11:29:47 gss
+11:29:53 cd ../
+11:29:56 git kani enable
+11:30:24 vim src/02_test.c
+11:30:38 vim src/02_test.c
+11:30:44 cd src
+11:30:48 gcc 02_test.c
+error : status 0
+11:30:51 ./a.out
+11:33:29 vim 02_test.c
+11:33:54 gcc 02_test.c
+error : status 0
+11:33:59 ./a.out
+11:34:18 gs
+11:34:31 git add 02_test.c
+11:35:06 less 02_test.c
+11:35:21 git commit -m "not_prime_numberの実装"
+11:35:34 git kani disable
+11:37:34 vim 03_test.c
+11:37:37 gcc 03_test.c
+error : status 0
+11:37:43 ./a.out
+11:38:03 gss
+11:38:07 ga 03_test.c
+11:38:27 less 03_test.c
+11:38:45 git commit -m "remainder_numberの実装"
+11:42:14 vim 03_test.c
+11:42:20 gcc 03_test.c && ./a.out
+error : status 139
+11:44:46 vim 03_test.c
+11:44:49 gcc 03_test.c && ./a.out
+error : status 130
+11:45:07 l
+11:45:23 cd answer
+11:45:42 less 01_test_answer.c
+11:45:53 less ./01_test_answer.c
+11:46:01 less ../01_test.c
+11:46:23 less 02_test_answer.c
+11:46:51 less 03_test_answer.c 
+11:46:53 cd ../
+11:47:25 vim 03_test.c
+11:47:26 gcc 03_test.c && ./a.out
+error : status 0
+11:47:44 gcc 03_test.c && ./a.out
+error : status 0
+11:48:27 vim 03_test.c
+11:48:32 ga 03_test.c
+11:48:46 gcmsg "クイックソートの実装"
+error : status 0
+11:49:11 git diff
+11:49:23 gs
